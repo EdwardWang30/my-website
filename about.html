@@ -13,13 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
     <!--Navbar-->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <a class="navbar-brand" href="index.html" style="margin-left: 10px;">
             <img src="logo.png" width="25" class="transformImage"/>
             <span style="font-size: 28px;">Tennis<span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -36,61 +36,64 @@
         </div>
     </nav>
 
-    <div class="bodyText">
+    <div class="hideScroll">
+        <!--Main text and image-->
+        <div class="bodyText">
 
-        <br>
-        <h1 class="sections">About Me:</h1>
-            
-        <figure>
-            <img src="Edward Wang - Image for Website.jpg" width="400" style="border: 3px solid; margin-left: 15px; margin-bottom: 10px; margin-top: 15px;"/>
-            <figcaption class="imageCaption" style="margin-left: 43px;">This is me at Fordham University in Bronx, NY.</figcaption>
-        </figure>
+            <br>
+            <h1 class="sections">About Me:</h1>
+                
+            <figure>
+                <img src="Edward Wang - Image for Website.jpg" width="400" style="border: 3px solid; margin-left: 15px; margin-bottom: 10px; margin-top: 15px;"/>
+                <figcaption class="imageCaption" style="margin-left: 43px;">This is me at Fordham University in Bronx, NY.</figcaption>
+            </figure>
 
-        <p>Hi! I'm <b>Edward Wang</b>.</p>
-        <p>I'm a rising sophomore at <span style="color: orange; font-weight: bold;">Tenafly High School</span> 🐯.</p>
-        <p>In school, my favorite subjects are <span style="color: rgb(0, 236, 0); font-weight: bold;">biology</span> and <span style="color: rgb(39, 125, 238); font-weight: bold;">math</span>.</p>
-        <p>When I'm not doing work, I enjoy practicing the <span style="color: rgb(179, 103, 5); font-weight: bold;">violin</span>, playing <span style="color: rgb(0, 236, 0); font-weight: bold;">tennis</span>, and <span style="color: rgb(228, 35, 93); font-weight: bold;">coding</span>.</p>
-        <p>I like spending time with my <span style="color: rgb(80, 195, 233); font-weight: bold;">family</span> and I have two younger twin sisters who are 11 years old.</p>
-        <p>I also enjoy hanging out with my <span style="color: rgb(255, 98, 98); font-weight: bold;">friends</span>. </p>
+            <p>Hi! I'm <b>Edward Wang</b>.</p>
+            <p>I'm a rising sophomore at <span style="color: orange; font-weight: bold;">Tenafly High School</span> 🐯.</p>
+            <p>In school, my favorite subjects are <span style="color: rgb(0, 236, 0); font-weight: bold;">biology</span> and <span style="color: rgb(39, 125, 238); font-weight: bold;">math</span>.</p>
+            <p>When I'm not doing work, I enjoy practicing the <span style="color: rgb(179, 103, 5); font-weight: bold;">violin</span>, playing <span style="color: rgb(0, 236, 0); font-weight: bold;">tennis</span>, and <span style="color: rgb(228, 35, 93); font-weight: bold;">coding</span>.</p>
+            <p>I like spending time with my <span style="color: rgb(80, 195, 233); font-weight: bold;">family</span> and I have two younger twin sisters who are 11 years old.</p>
+            <p>I also enjoy hanging out with my <span style="color: rgb(255, 98, 98); font-weight: bold;">friends</span>. </p>
 
-        <div class="row">
-            <div class="column">
-                <div style="padding-top: 10px; padding-bottom: 10px;">
-                    <label for="hobby">What is your favorite hobby?</label>
-                    <input type="text" id="hobby" hobby="hobby" placeholder="Favorite Hobby"/>
-                    <button id="buttonThree">Enter<button>
+            <!--Button-->
+            <div class="row">
+                <div class="column">
+                    <div style="padding-top: 10px; padding-bottom: 10px;">
+                        <label for="hobby">What is your favorite hobby?</label>
+                        <input type="text" id="hobby" hobby="hobby" placeholder="Favorite Hobby"/>
+                        <button id="buttonThree">Enter<button>
+                    </div>
+                </div>
+                <div class="column">
+                    <p id="message" style="padding-top: 10px; padding-bottom: 10px;">&nbsp;</p>
                 </div>
             </div>
-            <div class="column">
-                <p id="message" style="padding-top: 10px; padding-bottom: 10px;">&nbsp;</p>
-            </div>
+
+            <!-- Java Script: Button -->
+            <script>
+                let buttonThree = document.getElementById("buttonThree");
+                buttonThree.onclick = () => {
+                    let userInput = document.getElementById("hobby");
+                    let hobby = userInput.value.bold();
+                    let hobbyMessage = document.getElementById("message");
+                    hobbyMessage.innerHTML = "Your favorite hobby is " + hobby + "!";
+                    localStorage.setItem("hobby", hobby);
+                }
+
+                window.onload = () => {
+                    if (localStorage.getItem("hobby") != null) {
+                        let hobbyMessage = document.getElementById("message");
+                        hobbyMessage.innerHTML = "Your favorite hobby is " + (localStorage.getItem("hobby")) + "!";
+                    }
+                }
+            </script>
         </div>
 
-        <!-- Java Script -->
-        <script>
-
-            let buttonThree = document.getElementById("buttonThree");
-            buttonThree.onclick = () => {
-                let userInput = document.getElementById("hobby");
-                let hobby = userInput.value.bold();
-                let hobbyMessage = document.getElementById("message");
-                hobbyMessage.innerHTML = "Your favorite hobby is " + hobby + "!";
-                localStorage.setItem("hobby", hobby);
-            }
-
-            window.onload = () => {
-                if (localStorage.getItem("hobby") != null) {
-                    let hobbyMessage = document.getElementById("message");
-                    hobbyMessage.innerHTML = "Your favorite hobby is " + (localStorage.getItem("hobby")) + "!";
-                }
-            }
-        </script>
+        <!--Footer-->
+        <footer class="footer">
+            <p style="margin: 10px;" id="footer">Made by Edward Wang | © <script>document. write(new Date(). getFullYear());</script> </p>
+        </footer>
     </div>
-
-    <!--Footer-->
-    <footer class="footer">
-        <p style="margin: 10px;" id="footer">Made by Edward Wang | <script>document. write(new Date(). getFullYear());</script> </p>
-    </footer>
 
 </body>
 </html>
