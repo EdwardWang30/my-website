@@ -1,0 +1,50 @@
+.sections{
+    font-family: Roboto, sans-serif;
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+.bodyText {
+    padding-left: 13px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar a {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.imageCaption {
+    font-style: italic;
+    font-family: Roboto, sans-serif;
+}
+
+.contact {
+    color: white
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 5px;
+}
+
+.transformImage {
+    position: relative;
+    top: -4px;
+}
+
+.footer {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
