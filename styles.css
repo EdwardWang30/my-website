@@ -56,6 +56,12 @@ footer {
     color: white;
 }
 
+.footerText {
+    position: relative; 
+    top: +23px; 
+    left: 15px;
+}
+
 .hideScroll {
     overflow-x: hidden;
 }
