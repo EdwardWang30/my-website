@@ -55,6 +55,11 @@ body {
     margin-bottom: 15px;
 }
 
+.buttonLabel {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .transformImage {
     position: relative;
     top: -4px;
