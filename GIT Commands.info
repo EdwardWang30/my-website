@@ -1,0 +1,9 @@
+Git Commands when you make changes:
+
+Ctrl/CMD + J in VSCode to pull up terminal
+
+Type:
+
+git add --all
+git commit -m "<your commit message here>"
+git push
