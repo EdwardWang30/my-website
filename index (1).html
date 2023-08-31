@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style = "font-family: roboto;">Tennis - Edward Wang</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body style = "background-image: url(https://wallpapers.com/images/hd/tennis-ball-on-racket-3reuztrcmn4as8pm.jpg); color:white;">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!--Navbar--> 
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="margin-left: 10px;">
+                <img src="logo.png" width="25" class="transformImage"/>
+                <span style="font-size: 28px;">Tennis<span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">          
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" style="font-size: 18px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="violin.html" style="font-size: 18px;">Violin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="font-size: 18px;">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" style="font-size: 18px;">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav sm-icons">
+                    <li><a class="nav-link" href="https://github.com/EdwardWang30" target="_blank"><i class="bi bi-github" style="font-size: 25px;"></i></a></li>
+                    <li><a class="nav-link" href="https://www.linkedin.com/in/edward-wang-272314p/" target="_blank"><i class="bi bi-linkedin" style="font-size: 25px; padding-right: 10px;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hideScroll">
+        <!--Top part of webpage-->
+        <div class="bodyText">
+
+            <br>
+            <h1 id="welcome">Hello and welcome to my website!</h1>
+
+            <!--Button-->
+            <div class="button">
+                <label for="name" class="buttonLabel">What's your name? </label>
+                <input type="text" id="name" name="name" placeholder="Name"/>
+                <button id="button">Say Hi!</button>
+                <br>
+            </div>
+
+            <!--Java Script: Button-->
+            <script>
+                let button = document.getElementById("button");
+                button.onclick = () => {
+                    let nameInput = document.getElementById("name");
+                    let name = nameInput.value;
+                    let welcomeMessage = document.getElementById("welcome");
+                    welcomeMessage.innerHTML = "Hello " + name + ", welcome to my website!";
+                    localStorage.setItem("name", name);
+                }
+
+                window.onload = () => {
+                    if (localStorage.getItem("name") != null) {
+                        let welcomeMessage = document.getElementById("welcome");
+                        welcomeMessage.innerHTML = "Hello " + localStorage.getItem("name") + ", welcome to my website!";
+                    }
+
+                    if (localStorage.getItem("player") != null) {
+                        let favoritePlayerMessage = document.getElementById("favoritePlayer");
+                        favoritePlayerMessage.innerHTML = "You favorite tennis player is " + (localStorage.getItem("player")) + "!";
+                    }
+                }
+            </script>
+
+            <u><h2 class="headers">My Journey:</h2></u>
+            <p>My name is Edward Wang.</p>
+            <p>I started learning tennis in the <span style="font-weight: bold; color: rgb(92, 214, 255);">summer of 2021</span>.</p>
+            <p>In the beginning, I didn't really like it since I had to wake up every day at <span style="font-weight: bold; color: rgb(255, 29, 13);">7</span> to catch my morning lesson.</p>
+            <p>However, it is now one of my favorite <span style="font-weight: bold; color: rgb(255, 251, 0);">hobbies</span>, and I enjoy playing it with my friends.</p>
+            <p>One day, I hope to make my high school's <span style="font-weight: bold; color: rgb(0, 255, 0)">varsity</span> tennis team.</p>
+            
+            <!--Bottom part of webpage-->
+            <u><h2 class="headers">My Tennis Idol:</h2></u>
+            <p>My favorite tennis player is <span style="font-weight: bold; color: rgb(17, 227, 255)">Roger Federer</span>, who is the first person to win 20 grand slams in tennis.</p>
+            <p>Roger Federer has been number one in the world for <span style="font-weight: bold; color:rgb(255, 146, 4);">310</span> weeks.</p>
+            
+            <!--Code for images, two are aligned side by side-->
+            <div class="row">
+                <div class="column">
+                    <figure>
+                        <img src="https://cdn.britannica.com/57/183257-050-0BA11B4B/Roger-Federer-2012.jpg" width="405" class="imageBorder"/>
+                        <figcaption class="imageCaption" style="margin-left: 35px;">Federer's backhand slice is one of his best shots.</figcaption>
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure>
+                        <img src="https://i.eurosport.com/2018/01/28/2256156.jpg" width="300" class="imageBorder"/>   
+                        <figcaption class="imageCaption" style="margin-left: 33px;">All 20 grand slams Federer has won.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <p>My favorite tennis tournament is <span style="font-weight: bold; color:rgb(200, 74, 204);">Wimbledon</span>, which is held in London every year.</p>
+            <p>Wimbledon is the oldest tennis tournament in the world and regarded as one of the most <span style="font-weight: bold; color: orangered">prestigious</span>.</p>
+            <p>Roger Federer has won <span style="font-weight: bold; color: yellow;">8</span> Wimbledon titles.</p>
+
+            <div class="row" style="margin-top: 35px;">
+                <div class="column">
+                    <figure>
+                        <img src="https://image.cnbcfm.com/api/v1/image/106470237-1585754796489gettyimages-1161273178.jpeg?v=1680265230&w=1920&h=1080" width="450" class="imageBorder"/> 
+                        <figcaption class="imageCaption" style="margin-left: 30px">Dark green and purple are traditional colors for Wimbledon.</figcaption>
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure>
+                        <img src="https://e3.365dm.com/21/07/768x432/skynews-wimbledon-covid-court-one_5436857.jpg?20210704144522" width="430" class="imageBorder"/> 
+                        <figcaption class="imageCaption" style="margin-left: 28px">Centre Court, where the finals of Wimbledon are played. </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <p>Roger Federer's biggest <span style="font-weight: bold; color: rgb(240, 162, 17)">rivals</span> during his career were Rafael Nadal and Novak Djokovic.</p>
+            <p>Roger Federer retired from tennis in September 2022. Federer's last match was the Laver Cup, where he played doubles with Rafael Nadal. Although he didn't win, it was a very <span style="font-weight: bold; color: red">emotional</span> game for him.</p>
+        
+            <div class="row">
+                <div class="column">
+                    <figure>
+                        <img src="https://news.cgtn.com/news/2022-09-24/Roger-Federer-falls-in-last-match-at-Laver-Cup-alongside-Nadal--1dAlKmvgsZq/img/24869ce749374539bad134950bb1c486/24869ce749374539bad134950bb1c486.jpeg" width="525" class="imageBorder"/> 
+                        <figcaption class="imageCaption" style="margin-left: 55px">Pre-match photo with Tiafoe and Sock at the 2022 Laver Cup. </figcaption>
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure>
+                        <img src="https://static01.nyt.com/images/2018/09/20/sports/20LAVERFEDERERprint2/20LAVERFEDERER-INYT1-superJumbo.jpg" width="500" class="imageBorder"/> 
+                        <figcaption class="imageCaption" style="margin-left: 95px">Bonding moment between Federer and Nadal.</figcaption>
+                    </figure>        
+                </div>
+            </div>
+
+            <p>Federer has picked up the nickname <span style="font-weight: bold; color:rgb(0, 255, 21)">"the maestro"</span>. He is an icon of the sport and often associated with elegance and graciousness.</p>    
+            
+            <br>
+            <!--Second Button-->         
+            <div class="button">
+                <label for="player" class="buttonLabel">Who is your favorite tennis player?</label>
+                <input type="text" id="player" player="player" placeholder="Favorite Player"/>
+                <button id="buttonTwo">Enter</button>
+            </div>
+    
+            <p id="favoritePlayer">&nbsp;</p>
+            <br>
+
+            <!--Java Script: Second Button-->
+            <script>
+                let buttonTwo = document.getElementById("buttonTwo");
+                buttonTwo.onclick = () => {
+                    let playerInput = document.getElementById("player");
+                    let player = playerInput.value.bold(); 
+                    let favoritePlayerMessage = document.getElementById("favoritePlayer");
+                    favoritePlayerMessage.innerHTML = "You favorite tennis player is " + player + "!";
+                    localStorage.setItem("player", player);
+                }            
+            </script> 
+        </div>
+    </div>
+
+    <!--Footer--> 
+    <footer class="hideScroll">
+        <a class="footerText" href="#">Made by Edward Wang | © <script>document. write(new Date(). getFullYear());</script></a>
+    </footer>
+
+</body>
+</html>
